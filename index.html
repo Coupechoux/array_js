@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Manipulation de tableaux</title>
+		<script src="data.js"></script>
+		<script src="populate.js"></script>
+		<style>
+			.inner {
+				display: inline-block;
+				margin-left: 30px;
+				vertical-align: top;
+			}
+			.day   { background: #eee; color: black; }
+			.night { background: #333; color: white; }
+
+			@media (prefers-color-scheme: dark) {
+				.day.dark-scheme   { background:  #333; color: white; }
+				.night.dark-scheme { background: black; color:  #ddd; }
+			}
+
+			@media (prefers-color-scheme: light) {
+				.day.light-scheme   { background: white; color:  #555; }
+				.night.light-scheme { background:  #eee; color: black; }
+			}
+
+		</style>
+	</head>
+	<body class="night">
+		<div>
+			<div class="inner"><button onclick="pop1();">Méthode 1</button></div>
+			<div class="inner"><button onclick="pop2();">Méthode 2</button></div>
+			<div class="inner"><button onclick="pop3();">Méthode 3</button></div>
+			<div class="inner"><button onclick="pop4();">Méthode 4</button></div>
+		</div>
+
+		<form action="#" onsubmit="addSomeone();return false;">
+			Nom : <input type="text" id="newName"/>
+			Âge : <input type="number" min="0" max="99" id="newAge"/>
+			<input type="submit"/>
+		</form>
+
+		<div> 
+			<h2>Liste des informations</h2>
+			<div class="inner">
+				<h3>Les noms des gens</h3>
+				<ul id="names_list">
+				</ul>
+			</div>
+			<div class="inner">
+				<h3>Les âges des gens</h3>
+				<ul id="ages_list">
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
